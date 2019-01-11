@@ -136,12 +136,12 @@ export default restart => {
         //     0.07,
         //     platformWidth * 0.8
         // ),
-        platform7: Platform(
-            world,
-            { x: cx, y: offsetY + 465 },
-            0,
-            platformWidth * 0.9
-        ),
+        // platform7: Platform(
+        //     world,
+        //     { x: cx, y: offsetY + 465 },
+        //     0,
+        //     platformWidth * 0.9
+        // ),
 
         // barrier1: Barrier(
         //     world,

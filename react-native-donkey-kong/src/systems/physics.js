@@ -1,6 +1,6 @@
 import Matter from "matter-js";
 import { filter, base, shift, remove } from "../utils";
-import { aboveTopEdge } from "../utils/platforms";
+// import { aboveTopEdge } from "../utils/platforms";
 import { collisionCategories } from "../utils/constants";
 
 const removeEntitiesThatHaveFallenTooFar = entities => {
@@ -33,17 +33,17 @@ const checkIfMarioHasFallenOff = (entities, dispatch) => {
 
 const updatePlatformCollisionFilters = entities => {
 	let mario = entities.mario;
-	let platforms = filter(entities, "platform");
-	let active = filter(platforms, p => aboveTopEdge(p, shift(base(mario), 0, -2)));
-	let others = filter(platforms, x => active.indexOf(x) === -1);
+	// let platforms = filter(entities, "platform");
+	// let active = filter(platforms, p => aboveTopEdge(p, shift(base(mario), 0, -2)));
+	// let others = filter(platforms, x => active.indexOf(x) === -1);
 
-	active.forEach(x => {
-		x.body.collisionFilter.mask = collisionCategories.mario | collisionCategories.barrel;
-	});
+	// active.forEach(x => {
+	// 	x.body.collisionFilter.mask = collisionCategories.mario | collisionCategories.barrel;
+	// });
 
-	others.forEach(x => {
-		x.body.collisionFilter.mask = collisionCategories.barrel;
-	});
+	// others.forEach(x => {
+	// 	x.body.collisionFilter.mask = collisionCategories.barrel;
+	// });
 
 	return entities;
 };

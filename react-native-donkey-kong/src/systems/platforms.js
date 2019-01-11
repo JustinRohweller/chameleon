@@ -44,7 +44,8 @@ export default (entities, { events }) => {
 
 	let platforms = filter(entities, "platform");
 	let gestures = mario.controls.gestures;
-	let grounded = any(platforms, p => standing(p, mario));
+	// let grounded = any(platforms, p => standing(p, mario));
+	let grounded = true;
 	let jumping = mario.animations.jump;
 
 	let actions = [

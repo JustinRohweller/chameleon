@@ -34,7 +34,8 @@ export default (entities, { events }) => {
 	let nearTopOfLadder = distance(top(current), base(mario)) < 20;
 	let platformAbove = closestAbove(platforms, current);
 	let aboveLadder = aboveTopEdge(platformAbove, base(mario));
-	let grounded = find(platforms, p => standing(p, mario));
+	// let grounded = find(platforms, p => standing(p, mario));
+	let grounded = true;
 
 	mario.controls.gestures = {
 		swipeUp,
@@ -46,18 +47,18 @@ export default (entities, { events }) => {
 	}
 
 	let modes = [
-		{
-			if: grounded && nearBaseOfLadder && swipeUp,
-			then: () => {
-				mario.controls.mode = "ladder";
-			}
-		},
-		{
-			if: grounded && nearTopOfLadder && swipeDown,
-			then: () => {
-				mario.controls.mode = "ladder";
-			}
-		},
+		// {
+		// 	if: grounded && nearBaseOfLadder && swipeUp,
+		// 	then: () => {
+		// 		mario.controls.mode = "ladder";
+		// 	}
+		// },
+		// {
+		// 	if: grounded && nearTopOfLadder && swipeDown,
+		// 	then: () => {
+		// 		mario.controls.mode = "ladder";
+		// 	}
+		// },
 		// {
 		// 	if: aboveLadder && mario.controls.mode === "ladder",
 		// 	then: () => {
@@ -77,9 +78,13 @@ export default (entities, { events }) => {
 		// 		mario.controls.gestures = {};
 		// 	}
 		// },
+		// {
+		// 	if: true,
+		// 	then: () => {}
+		// }
 		{
 			if: true,
-			then: () => {}
+			then: () => { mario.controls.mode = "ladder"; }
 		}
 	];
 

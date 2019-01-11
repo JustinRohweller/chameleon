@@ -25,21 +25,38 @@ export default (entities, { events }) => {
 	// let nearTop = aboveTopEdge(platformAbove, shift(marioBase, 0, -8))
 	let nearTop = false;
 
-	Matter.Body.setPosition(mario.body, { x: position(ladder).x, y: position(mario).y })
+	Matter.Body.setPosition(mario.body, { x: position(mario).x, y: position(mario).y })
 
 
 	let actions = [
+		// Needs to be more of these: ie. 
+		// up && no horizontal, left and no vertical, ect.
 		{
-			if: gestures.hold && goingUp,
+			if: gestures.hold && mario.direction.horizontal === "left",
 			then: () => {
-				mario.action = nearTop ? "rising" : "climbing";
-				Matter.Body.setPosition(mario.body, shift(position(mario), 0, -1))
+				mario.action = nearTop ? "rising" : "holding";
+				Matter.Body.setPosition(mario.body, shift(position(mario), -1, 0))
 			}
 		},
 		{
-			if: gestures.hold && canGoDown,
+			if: gestures.hold && mario.direction.horizontal === "right",
 			then: () => {
-				mario.action = nearTop ? "rising" : "climbing";
+				mario.action = nearTop ? "rising" : "walking";
+				Matter.Body.setPosition(mario.body, shift(position(mario), 1, 0))
+			}
+		},
+		{
+			if: gestures.hold && mario.direction.vertical === "up",
+			then: () => {
+				mario.action = nearTop ? "rising" : "walking";
+				Matter.Body.setPosition(mario.body, shift(position(mario), 0, -1))
+
+			}
+		},
+		{
+			if: gestures.hold && mario.direction.vertical === "down",
+			then: () => {
+				mario.action = nearTop ? "rising" : "walking";
 				Matter.Body.setPosition(mario.body, shift(position(mario), 0, 1))
 
 			}

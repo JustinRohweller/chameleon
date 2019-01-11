@@ -44,6 +44,24 @@ export default (entities, { events }) => {
 
 			}
 		},
+		// {
+		// 	if: gestures.hold && mario.direction.horizontal === "right",
+		// 	then: () => {
+		// 		// mario.action = "climbing";
+		// 		// would do this if we wanted gravity applied i think
+		// 		// Matter.Body.applyForce(mario.body, mario.body.position, {
+		// 		// 	x: mario.direction.horizontal === "right" ? 2.5 : -2.5,
+		// 		// 	y: mario.direction.horizontal === "up" ? 2.5 : -2.5,
+		// 		// });
+		// 		// Matter.Body.setPosition(
+		// 		// 	mario.body, shift(position(mario), 
+		// 		// 	mario.direction.horizontal === "right" ? 1 : -1, 
+		// 		// 	mario.direction.vertical === "up" ? 1 : -1
+		// 		// 	)
+		// 		// )
+		// 		Matter.Body.setPosition(mario.body, shift(position(mario), 1, 0))
+		// 	}
+		// },
 		{
 			if: true,
 			then: () => {

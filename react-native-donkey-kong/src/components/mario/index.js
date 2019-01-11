@@ -70,7 +70,8 @@ export default (world, pos) => {
     size: { width, height },
     controls: {
       gestures: {},
-      mode: "platform"
+      // mode: "platform"
+      mode: "ladder"
     },
     direction: {
       horizontal: "right",

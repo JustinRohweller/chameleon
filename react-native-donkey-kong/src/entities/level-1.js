@@ -143,28 +143,28 @@ export default restart => {
             platformWidth * 0.9
         ),
 
-        barrier1: Barrier(
-            world,
-            { x: cx - platformWidth / 2 + 10, y: cy },
-            height
-        ),
-        barrier2: Barrier(
-            world,
-            {
-                x: cx + platformWidth / 2 - 10,
-                y: cy - offsetY - 200
-            },
-            height
-        ),
-        barrier3: Barrier(
-            world,
-            {
-                x: cx + platformWidth / 2 - 10,
-                y: Math.min(1000, cy - offsetY - 200 + height) // Matter will ignore objects that start outside of a 1000x1000 box
-            },
-            height,
-            collisionCategories.mario
-        ),
+        // barrier1: Barrier(
+        //     world,
+        //     { x: cx - platformWidth / 2 + 10, y: cy },
+        //     height
+        // ),
+        // barrier2: Barrier(
+        //     world,
+        //     {
+        //         x: cx + platformWidth / 2 - 10,
+        //         y: cy - offsetY - 200
+        //     },
+        //     height
+        // ),
+        // barrier3: Barrier(
+        //     world,
+        //     {
+        //         x: cx + platformWidth / 2 - 10,
+        //         y: Math.min(1000, cy - offsetY - 200 + height) // Matter will ignore objects that start outside of a 1000x1000 box
+        //     },
+        //     height,
+        //     collisionCategories.mario
+        // ),
         // oil: {
         //     source: require("../components/props/oil.gif"),
         //     position: { x: cx - 140 * scale, y: offsetY + 427 },
@@ -179,6 +179,7 @@ export default restart => {
         //     renderer: <Tile />
         // },
 
+        // Princess is referenced in the camera.js. She is the goal. Replace with goal as name.
         princess: {
             source: require("../components/props/princess.gif"),
             position: { x: cx, y: offsetY + 2 },

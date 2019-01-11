@@ -39,66 +39,66 @@ export default restart => {
             false,
             "left"
         ),
-        ladder2: Ladder(
-            world,
-            { x: cx + 100 * scale, y: offsetY + 130 },
-            60,
-            true,
-            true,
-            "left"
-        ),
-        ladder3: Ladder(
-            world,
-            { x: cx - 70, y: offsetY + 200 },
-            60,
-            true,
-            true,
-            "right"
-        ),
-        ladder4: Ladder(world, { x: cx + 70, y: offsetY + 178 }, 36),
-        ladder5: Ladder(world, { x: cx + 70, y: offsetY + 230 }, 36),
-        ladder6: Ladder(
-            world,
-            { x: cx + 105 * scale, y: offsetY + 275 },
-            50,
-            true,
-            true,
-            "left"
-        ),
-        ladder7: Ladder(world, { x: cx - 100 * scale, y: offsetY + 243 }, 36),
-        ladder8: Ladder(world, { x: cx - 100 * scale, y: offsetY + 295 }, 36),
-        ladder9: Ladder(
-            world,
-            { x: cx - 100 * scale, y: offsetY + 354 },
-            60,
-            true,
-            true,
-            "right"
-        ),
-        ladder10: Ladder(
-            world,
-            { x: cx, y: offsetY + 352 },
-            66,
-            true,
-            true,
-            "right"
-        ),
-        ladder11: Ladder(
-            world,
-            { x: cx + 90 * scale, y: offsetY + 430 },
-            70,
-            true,
-            false,
-            "left"
-        ),
-        ladder12: Ladder(
-            world,
-            { x: cx + 90 * scale, y: offsetY + 480 },
-            70,
-            true,
-            false,
-            "left"
-        ),
+        // ladder2: Ladder(
+        //     world,
+        //     { x: cx + 100 * scale, y: offsetY + 130 },
+        //     60,
+        //     true,
+        //     true,
+        //     "left"
+        // ),
+        // ladder3: Ladder(
+        //     world,
+        //     { x: cx - 70, y: offsetY + 200 },
+        //     60,
+        //     true,
+        //     true,
+        //     "right"
+        // ),
+        // ladder4: Ladder(world, { x: cx + 70, y: offsetY + 178 }, 36),
+        // ladder5: Ladder(world, { x: cx + 70, y: offsetY + 230 }, 36),
+        // ladder6: Ladder(
+        //     world,
+        //     { x: cx + 105 * scale, y: offsetY + 275 },
+        //     50,
+        //     true,
+        //     true,
+        //     "left"
+        // ),
+        // ladder7: Ladder(world, { x: cx - 100 * scale, y: offsetY + 243 }, 36),
+        // ladder8: Ladder(world, { x: cx - 100 * scale, y: offsetY + 295 }, 36),
+        // ladder9: Ladder(
+        //     world,
+        //     { x: cx - 100 * scale, y: offsetY + 354 },
+        //     60,
+        //     true,
+        //     true,
+        //     "right"
+        // ),
+        // ladder10: Ladder(
+        //     world,
+        //     { x: cx, y: offsetY + 352 },
+        //     66,
+        //     true,
+        //     true,
+        //     "right"
+        // ),
+        // ladder11: Ladder(
+        //     world,
+        //     { x: cx + 90 * scale, y: offsetY + 430 },
+        //     70,
+        //     true,
+        //     false,
+        //     "left"
+        // ),
+        // ladder12: Ladder(
+        //     world,
+        //     { x: cx + 90 * scale, y: offsetY + 480 },
+        //     70,
+        //     true,
+        //     false,
+        //     "left"
+        // ),
 
         // platform1: Platform(
         //     world,

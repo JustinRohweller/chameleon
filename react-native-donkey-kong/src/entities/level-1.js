@@ -165,12 +165,12 @@ export default restart => {
             height,
             collisionCategories.mario
         ),
-        oil: {
-            source: require("../components/props/oil.gif"),
-            position: { x: cx - 140 * scale, y: offsetY + 427 },
-            size: { width: 30, height: 56 },
-            renderer: <Tile />
-        },
+        // oil: {
+        //     source: require("../components/props/oil.gif"),
+        //     position: { x: cx - 140 * scale, y: offsetY + 427 },
+        //     size: { width: 30, height: 56 },
+        //     renderer: <Tile />
+        // },
 
         // barrelStack: {
         //     source: require("../components/props/barrel-stack.gif"),

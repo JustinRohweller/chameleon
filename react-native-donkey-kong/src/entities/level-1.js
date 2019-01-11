@@ -100,12 +100,12 @@ export default restart => {
             "left"
         ),
 
-        platform1: Platform(
-            world,
-            { x: cx, y: offsetY + 35 },
-            0,
-            platformWidth * 0.25
-        ),
+        // platform1: Platform(
+        //     world,
+        //     { x: cx, y: offsetY + 35 },
+        //     0,
+        //     platformWidth * 0.25
+        // ),
         // platform2: Platform(
         //     world,
         //     { x: cx - 15, y: offsetY + 100 },

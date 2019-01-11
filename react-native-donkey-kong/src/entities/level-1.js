@@ -186,10 +186,10 @@ export default restart => {
             renderer: <Tile />
         },
 
-        kong: Kong(world, {
-            x: cx - platformWidth * 0.4 + 43,
-            y: offsetY + 55
-        }),
+        // kong: Kong(world, {
+        //     x: cx - platformWidth * 0.4 + 43,
+        //     y: offsetY + 55
+        // }),
 
         mario: Mario(world, { x: cx, y: offsetY + 465 - 20 / 2 - 20 }),
 

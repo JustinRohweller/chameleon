@@ -172,12 +172,12 @@ export default restart => {
             renderer: <Tile />
         },
 
-        barrelStack: {
-            source: require("../components/props/barrel-stack.gif"),
-            position: { x: cx - platformWidth * 0.125 + 22, y: offsetY + 67 },
-            size: { width: 55, height: 44 },
-            renderer: <Tile />
-        },
+        // barrelStack: {
+        //     source: require("../components/props/barrel-stack.gif"),
+        //     position: { x: cx - platformWidth * 0.125 + 22, y: offsetY + 67 },
+        //     size: { width: 55, height: 44 },
+        //     renderer: <Tile />
+        // },
 
         princess: {
             source: require("../components/props/princess.gif"),

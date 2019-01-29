@@ -25,46 +25,67 @@ export default (entities, { events }) => {
 	let actions = [
 		// Needs to be more of these: ie. 
 		// up && no horizontal, left and no vertical, ect.
-		{
-			if: gestures.hold && mario.direction.horizontal === "left",
-			then: () => {
-				if (gestures.hold &&mario.direction.vertical === "up") {
-					// Going up and left
-					mario.action = nearTop ? "rising" : "holding";
-					Matter.Body.setPosition(mario.body, shift(position(mario), -1, -1))
-				} else if (gestures.hold &&mario.direction.vertical === "down") {
-					mario.action = nearTop ? "rising" : "holding";
-					Matter.Body.setPosition(mario.body, shift(position(mario), -1, 1))
-				} else {
-					mario.action = nearTop ? "rising" : "holding";
-					Matter.Body.setPosition(mario.body, shift(position(mario), -1, 0))
-				}
-			}
-		},
-
-		{
-			if: gestures.hold && mario.direction.horizontal === "right",
-			then: () => {
-				if (gestures.hold &&mario.direction.vertical === "up") {
-					// Going up and left
-					mario.action = nearTop ? "rising" : "holding";
-					Matter.Body.setPosition(mario.body, shift(position(mario), 1, -1))
-				} else if (gestures.hold &&mario.direction.vertical === "down") {
-					mario.action = nearTop ? "rising" : "holding";
-					Matter.Body.setPosition(mario.body, shift(position(mario), 1, 1))
-				} else {
-					mario.action = nearTop ? "rising" : "holding";
-					Matter.Body.setPosition(mario.body, shift(position(mario), 1, 0))
-				}
-			}
-		},
 		// {
 		// 	if: gestures.hold && mario.direction.horizontal === "left",
 		// 	then: () => {
-		// 		mario.action = nearTop ? "rising" : "holding";
-		// 		Matter.Body.setPosition(mario.body, shift(position(mario), -1, 0))
+		// 		if (gestures.hold &&mario.direction.vertical === "up") {
+		// 			// Going up and left
+		// 			mario.action = nearTop ? "rising" : "holding";
+		// 			Matter.Body.setPosition(mario.body, shift(position(mario), -1, -1))
+		// 		} else if (gestures.hold &&mario.direction.vertical === "down") {
+		// 			mario.action = nearTop ? "rising" : "holding";
+		// 			Matter.Body.setPosition(mario.body, shift(position(mario), -1, 1))
+		// 		} else {
+		// 			mario.action = nearTop ? "rising" : "holding";
+		// 			Matter.Body.setPosition(mario.body, shift(position(mario), -1, 0))
+		// 		}
 		// 	}
 		// },
+
+		// {
+		// 	if: gestures.hold && mario.direction.horizontal === "right",
+		// 	then: () => {
+		// 		if (gestures.hold &&mario.direction.vertical === "up") {
+		// 			// Going up and left
+		// 			mario.action = nearTop ? "rising" : "holding";
+		// 			Matter.Body.setPosition(mario.body, shift(position(mario), 1, -1))
+		// 		} else if (gestures.hold &&mario.direction.vertical === "down") {
+		// 			mario.action = nearTop ? "rising" : "holding";
+		// 			Matter.Body.setPosition(mario.body, shift(position(mario), 1, 1))
+		// 		} else {
+		// 			mario.action = nearTop ? "rising" : "holding";
+		// 			Matter.Body.setPosition(mario.body, shift(position(mario), 1, 0))
+		// 		}
+		// 	}
+		// },
+		{
+			if: gestures.hold && mario.direction.horizontal === "up",
+			then: () => {
+				mario.action = nearTop ? "rising" : "holding";
+				Matter.Body.setPosition(mario.body, shift(position(mario), 0, -1))
+			}
+		},
+		{
+			if: gestures.hold && mario.direction.horizontal === "down",
+			then: () => {
+				mario.action = nearTop ? "rising" : "holding";
+				Matter.Body.setPosition(mario.body, shift(position(mario), 0, 1))
+			}
+		},
+		{
+			if: gestures.hold && mario.direction.horizontal === "left",
+			then: () => {
+				mario.action = nearTop ? "rising" : "holding";
+				Matter.Body.setPosition(mario.body, shift(position(mario), -1, 0))
+			}
+		},
+		{
+			if: gestures.hold && mario.direction.horizontal === "right",
+			then: () => {
+				mario.action = nearTop ? "rising" : "holding";
+				Matter.Body.setPosition(mario.body, shift(position(mario), 1, 0))
+			}
+		},
 		// {
 		// 	if: gestures.hold && mario.direction.vertical === "up",
 		// 	then: () => {

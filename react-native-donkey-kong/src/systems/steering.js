@@ -6,6 +6,8 @@ export default (entities, { events }) => {
 	let horizontal = [
 		{ if: swipeLeft, then: "left" },
 		{ if: swipeRight, then: "right" },
+		{ if: swipeUp, then: "up" },
+		{ if: swipeDown, then: "down" },
 		{ if: true, then: mario.direction.horizontal }
 	];
 

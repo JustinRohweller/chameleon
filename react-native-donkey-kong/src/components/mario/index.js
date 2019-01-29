@@ -75,7 +75,9 @@ export default (world, pos) => {
     },
     direction: {
       horizontal: "right",
-      vertical: "up"
+      vertical: "up",
+      // horizontal: "none",
+      // vertical: "none"
     },
     action: "idling",
     actions: {

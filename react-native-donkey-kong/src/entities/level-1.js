@@ -5,7 +5,6 @@ import Platform from "../components/platform";
 import Barrier from "../components/barrier";
 import Ladder from "../components/ladder";
 import Mario from "../components/mario";
-import Kong from "../components/kong";
 import Tile from "../components/common/tile";
 import { collisionCategories } from "../utils/constants";
 import { filter, any, find } from "../utils";

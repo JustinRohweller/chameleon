@@ -62,6 +62,7 @@ const contains = (e1, e2) => {
 	return containsPosition(e1, position(e2))
 };
 
+// some sort of function that takes in a swipe event and returns a boolean.
 const any = (arr = [], b = "", c) => {
 	if (c) {
 		if (Array.isArray(c) === false) c = [c];

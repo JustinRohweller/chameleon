@@ -1,6 +1,5 @@
 import Matter from "matter-js";
 import { find, filter, position, shift, base } from "../utils";
-import { closestAbove, closestBelow, aboveTopEdge } from "../utils/platforms";
 import { closest } from "../utils/ladders";
 import { collisionCategories } from "../utils/constants";
 

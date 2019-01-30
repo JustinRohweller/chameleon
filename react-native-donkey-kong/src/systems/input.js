@@ -21,6 +21,13 @@ const swipe = (touches, dispatch) => {
 	}
 };
 
+// const endHold = (touches, events, dispatch) => {
+// 	let fingerUp = any(touches, "type", "end");
+	
+// 	if (fingerUp)
+// 		dispatch({ type: "endHold" });
+// };
+
 const hold = (touches, events, dispatch) => {
 	let fingerDown = any(touches, "type", ["long-press", "move"]);
 	let fingerUp = any(touches, "type", "end");

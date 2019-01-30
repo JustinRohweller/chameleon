@@ -28,6 +28,7 @@ export default (entities, { events }) => {
 	let swipeRight = any(events, "type", "swipe-right");
 	let tap = any(events, "type", "tap");
 	let hold = any(events, "type", "hold");
+	// let endHold
 
 	// let current = closest(ladders, mario);
 	// let nearBaseOfLadder = distance(base(current), base(mario)) < 20;

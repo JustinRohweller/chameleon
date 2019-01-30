@@ -74,7 +74,7 @@ export default (world, pos) => {
       mode: "ladder"
     },
     direction: {
-      horizontal: "right",
+      horizontal: "none",
       vertical: "up",
       // horizontal: "none",
       // vertical: "none"

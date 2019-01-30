@@ -86,6 +86,13 @@ export default (entities, { events }) => {
 				Matter.Body.setPosition(mario.body, shift(position(mario), 1, 0))
 			}
 		},
+		{
+			if: gestures.hold && mario.direction.horizontal === "none",
+			then: () => {
+				mario.action = "jumping";
+				// Matter.Body.setPosition(mario.body, shift(position(mario), 1, 0))
+			}
+		},
 		// {
 		// 	if: gestures.hold && mario.direction.vertical === "up",
 		// 	then: () => {
@@ -130,7 +137,8 @@ export default (entities, { events }) => {
 		{
 			if: true,
 			then: () => {
-				mario.action = nearTop ? "rising" : "holding";
+				mario.action = "holding";
+				mario.direction.horizontal === "none"
 			}
 		}
 	];

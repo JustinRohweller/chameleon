@@ -37,36 +37,29 @@ export default (entities, { events }) => {
 		{
 			if: gestures.hold && mario.direction.horizontal === "up",
 			then: () => {
-				mario.action = nearTop ? "rising" : "holding";
+				// mario.action = nearTop ? "rising" : "holding";
 				Matter.Body.setPosition(mario.body, shift(position(mario), 0, -1))
 			}
 		},
 		{
 			if: gestures.hold && mario.direction.horizontal === "down",
 			then: () => {
-				mario.action = nearTop ? "rising" : "holding";
+				// mario.action = nearTop ? "rising" : "holding";
 				Matter.Body.setPosition(mario.body, shift(position(mario), 0, 1))
 			}
 		},
 		{
 			if: gestures.hold && mario.direction.horizontal === "left",
 			then: () => {
-				mario.action = nearTop ? "rising" : "holding";
+				// mario.action = nearTop ? "rising" : "holding";
 				Matter.Body.setPosition(mario.body, shift(position(mario), -1, 0))
 			}
 		},
 		{
 			if: gestures.hold && mario.direction.horizontal === "right",
 			then: () => {
-				mario.action = nearTop ? "rising" : "holding";
+				// mario.action = nearTop ? "rising" : "holding";
 				Matter.Body.setPosition(mario.body, shift(position(mario), 1, 0))
-			}
-		},
-		{
-			if: gestures.hold && mario.direction.horizontal === "none",
-			then: () => {
-				mario.action = "jumping";
-				// Matter.Body.setPosition(mario.body, shift(position(mario), 1, 0))
 			}
 		},
 		{

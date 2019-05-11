@@ -22,42 +22,18 @@ export default (entities, { events }) => {
 	Matter.Body.setPosition(mario.body, { x: position(mario).x, y: position(mario).y })
 
 
+// I want:
+// swipeLeft
+// swipeRight
+// swipeUp
+// swipeDown
+// tap baddie to attack?
+// hold to hide/use ability
+// double tap to use tongue.
+// 
 	let actions = [
 		// Needs to be more of these: ie. 
 		// up && no horizontal, left and no vertical, ect.
-		// {
-		// 	if: gestures.hold && mario.direction.horizontal === "left",
-		// 	then: () => {
-		// 		if (gestures.hold &&mario.direction.vertical === "up") {
-		// 			// Going up and left
-		// 			mario.action = nearTop ? "rising" : "holding";
-		// 			Matter.Body.setPosition(mario.body, shift(position(mario), -1, -1))
-		// 		} else if (gestures.hold &&mario.direction.vertical === "down") {
-		// 			mario.action = nearTop ? "rising" : "holding";
-		// 			Matter.Body.setPosition(mario.body, shift(position(mario), -1, 1))
-		// 		} else {
-		// 			mario.action = nearTop ? "rising" : "holding";
-		// 			Matter.Body.setPosition(mario.body, shift(position(mario), -1, 0))
-		// 		}
-		// 	}
-		// },
-
-		// {
-		// 	if: gestures.hold && mario.direction.horizontal === "right",
-		// 	then: () => {
-		// 		if (gestures.hold &&mario.direction.vertical === "up") {
-		// 			// Going up and left
-		// 			mario.action = nearTop ? "rising" : "holding";
-		// 			Matter.Body.setPosition(mario.body, shift(position(mario), 1, -1))
-		// 		} else if (gestures.hold &&mario.direction.vertical === "down") {
-		// 			mario.action = nearTop ? "rising" : "holding";
-		// 			Matter.Body.setPosition(mario.body, shift(position(mario), 1, 1))
-		// 		} else {
-		// 			mario.action = nearTop ? "rising" : "holding";
-		// 			Matter.Body.setPosition(mario.body, shift(position(mario), 1, 0))
-		// 		}
-		// 	}
-		// },
 		{
 			if: gestures.hold && mario.direction.horizontal === "up",
 			then: () => {
@@ -93,47 +69,6 @@ export default (entities, { events }) => {
 				// Matter.Body.setPosition(mario.body, shift(position(mario), 1, 0))
 			}
 		},
-		// {
-		// 	if: gestures.hold && mario.direction.vertical === "up",
-		// 	then: () => {
-		// 		mario.action = nearTop ? "rising" : "walking";
-		// 		Matter.Body.setPosition(mario.body, shift(position(mario), 0, -1))
-
-		// 	}
-		// },
-		// {
-		// 	if: gestures.hold && mario.direction.horizontal === "right",
-		// 	then: () => {
-		// 		mario.action = nearTop ? "rising" : "walking";
-		// 		Matter.Body.setPosition(mario.body, shift(position(mario), 1, 0))
-		// 	}
-		// },
-		// {
-		// 	if: gestures.hold && mario.direction.vertical === "down",
-		// 	then: () => {
-		// 		mario.action = nearTop ? "rising" : "walking";
-		// 		Matter.Body.setPosition(mario.body, shift(position(mario), 0, 1))
-
-		// 	}
-		// },
-		// {
-		// 	if: gestures.hold && mario.direction.horizontal === "right",
-		// 	then: () => {
-		// 		// mario.action = "climbing";
-		// 		// would do this if we wanted gravity applied i think
-		// 		// Matter.Body.applyForce(mario.body, mario.body.position, {
-		// 		// 	x: mario.direction.horizontal === "right" ? 2.5 : -2.5,
-		// 		// 	y: mario.direction.horizontal === "up" ? 2.5 : -2.5,
-		// 		// });
-		// 		// Matter.Body.setPosition(
-		// 		// 	mario.body, shift(position(mario), 
-		// 		// 	mario.direction.horizontal === "right" ? 1 : -1, 
-		// 		// 	mario.direction.vertical === "up" ? 1 : -1
-		// 		// 	)
-		// 		// )
-		// 		Matter.Body.setPosition(mario.body, shift(position(mario), 1, 0))
-		// 	}
-		// },
 		{
 			if: true,
 			then: () => {

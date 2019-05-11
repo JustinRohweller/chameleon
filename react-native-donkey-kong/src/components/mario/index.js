@@ -72,7 +72,7 @@ export default (world, pos) => {
       // horizontal: "none",
       // vertical: "none"
     },
-    action: "idling",
+    action: "jumping",
     actions: {
       jumping: resolveAssetSource(ChameleonLicking),
       holding: resolveAssetSource(ChameleonWalking),

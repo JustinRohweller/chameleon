@@ -16,7 +16,7 @@ export default class MainMenu extends PureComponent {
         style={styles.container}
         contentContainerStyle={styles.contentContainer}
       >
-        <TouchableOpacity onPress={this.props.onPlayGame}>
+        <TouchableOpacity onPress={this.props.onPlayGame} style={{ marginTop: 60 }}>
           <View>
             <Text style={{ color: "white" }}>Play Game</Text>
           </View>

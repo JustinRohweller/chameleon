@@ -79,13 +79,13 @@ export default (entities, { events }) => {
 		// 		mario.controls.gestures = {};
 		// 	}
 		// },
-		// {
-		// 	if: true,
-		// 	then: () => {}
-		// }
 		{
 			if: true,
 			then: () => { mario.controls.mode = "ladder"; }
+		},
+		{
+			if: true,
+			then: () => {}
 		}
 	];
 

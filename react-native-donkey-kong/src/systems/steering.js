@@ -8,8 +8,8 @@ export default (entities, { events }) => {
 		{ if: swipeRight, then: "right" },
 		{ if: swipeUp, then: "up" },
 		{ if: swipeDown, then: "down" },
-		{ if: hold && mario.direction.horizontal === "none", then: "none" },
-		{ if: hold, then: "none" },
+		// { if: hold && mario.direction.horizontal === "none", then: "none" },
+		// { if: hold, then: "none" },
 		{ if: true, then: mario.direction.horizontal }
 	];
 

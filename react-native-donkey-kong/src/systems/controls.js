@@ -83,10 +83,10 @@ export default (entities, { events }) => {
 			if: true,
 			then: () => { mario.controls.mode = "ladder"; }
 		},
-		{
-			if: true,
-			then: () => {}
-		}
+		// {
+		// 	if: true,
+		// 	then: () => {}
+		// }
 	];
 
 	modes.find(x => x.if).then();

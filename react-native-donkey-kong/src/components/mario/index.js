@@ -3,10 +3,6 @@ import { StyleSheet, Image } from "react-native";
 import { collisionCategories } from "../../utils/constants";
 import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource';
 import Matter from "matter-js";
-import MarioHolding from "./mario-holding.gif";
-import MarioClimbing from "./mario-climbing.gif";
-import MarioRising from "./mario-rising.gif";
-import MarioDead from "./mario-dead.gif";
 import ChameleonWalking from './chameleon-walking.gif';
 import ChameleonLicking from './chameleon-licking.gif';
 
@@ -78,16 +74,9 @@ export default (world, pos) => {
     },
     action: "idling",
     actions: {
-      // idling: resolveAssetSource(MarioIdling),
-      // walking: resolveAssetSource(MarioWalking),
-      // jumping: resolveAssetSource(MarioJumping),
       jumping: resolveAssetSource(ChameleonLicking),
-      // holding: resolveAssetSource(MarioHolding),
       holding: resolveAssetSource(ChameleonWalking),
-      // climbing: resolveAssetSource(MarioClimbing),
       climbing: resolveAssetSource(ChameleonWalking),
-      // rising: resolveAssetSource(MarioRising),
-      // dead: resolveAssetSource(MarioDead)
     },
     "power-ups": {},
     animations: {},

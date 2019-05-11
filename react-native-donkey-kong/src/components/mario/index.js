@@ -3,9 +3,6 @@ import { StyleSheet, Image } from "react-native";
 import { collisionCategories } from "../../utils/constants";
 import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource';
 import Matter from "matter-js";
-import MarioIdling from "./mario-idling.gif";
-import MarioWalking from "./mario-walking.gif";
-import MarioJumping from "./mario-jumping.gif";
 import MarioHolding from "./mario-holding.gif";
 import MarioClimbing from "./mario-climbing.gif";
 import MarioRising from "./mario-rising.gif";
@@ -81,16 +78,16 @@ export default (world, pos) => {
     },
     action: "idling",
     actions: {
-      idling: resolveAssetSource(MarioIdling),
-      walking: resolveAssetSource(MarioWalking),
+      // idling: resolveAssetSource(MarioIdling),
+      // walking: resolveAssetSource(MarioWalking),
       // jumping: resolveAssetSource(MarioJumping),
       jumping: resolveAssetSource(ChameleonLicking),
       // holding: resolveAssetSource(MarioHolding),
       holding: resolveAssetSource(ChameleonWalking),
       // climbing: resolveAssetSource(MarioClimbing),
       climbing: resolveAssetSource(ChameleonWalking),
-      rising: resolveAssetSource(MarioRising),
-      dead: resolveAssetSource(MarioDead)
+      // rising: resolveAssetSource(MarioRising),
+      // dead: resolveAssetSource(MarioDead)
     },
     "power-ups": {},
     animations: {},

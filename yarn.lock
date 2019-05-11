@@ -4482,14 +4482,7 @@ react-native-extended-stylesheet@^0.8.1:
     css-mediaquery "^0.1.2"
     object-resolve-path "^1.1.0"
 
-react-native-game-engine@^0.10.1:
-  version "0.10.1"
-  resolved "https://registry.yarnpkg.com/react-native-game-engine/-/react-native-game-engine-0.10.1.tgz#3c8592ad6fbf405fdb8716f7212eae5bb457bdd9"
-  integrity sha512-Zp8IxcpRrHl4k/BLPe0Gnzw0ESlAOZChYp6jeKjhGxQLYzN2nn4hklEYujlW8Be4/LEnMGXes+8EDoik14H17w==
-  dependencies:
-    rxjs "^6.2.2"
-
-"react-native-game-engine@git+https://github.com/bberak/react-native-game-engine.git#rx-update":
+react-native-game-engine@^0.10.1, "react-native-game-engine@git+https://github.com/bberak/react-native-game-engine.git#rx-update":
   version "0.10.1"
   resolved "git+https://github.com/bberak/react-native-game-engine.git#293f5a0401d12110ce1420ad6999365bed6e32b6"
   dependencies:

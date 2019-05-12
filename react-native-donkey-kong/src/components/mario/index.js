@@ -63,14 +63,11 @@ export default (world, pos) => {
     size: { width, height },
     controls: {
       gestures: {},
-      // mode: "platform"
       mode: "ladder"
     },
     direction: {
       horizontal: "none",
       vertical: "up",
-      // horizontal: "none",
-      // vertical: "none"
     },
     action: "jumping",
     actions: {

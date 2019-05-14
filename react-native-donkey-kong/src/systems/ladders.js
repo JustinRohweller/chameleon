@@ -35,31 +35,31 @@ export default (entities, { events }) => {
 		// Needs to be more of these: ie. 
 		// up && no horizontal, left and no vertical, ect.
 		{
-			if: gestures.hold && mario.direction.horizontal === "up",
+			if: gestures.swipeUp && mario.direction.horizontal === "up",
 			then: () => {
 				mario.action = nearTop ? "rising" : "holding";
-				Matter.Body.setPosition(mario.body, shift(position(mario), 0, -1))
+				Matter.Body.setPosition(mario.body, shift(position(mario), 0, -10))
 			}
 		},
 		{
-			if: gestures.hold && mario.direction.horizontal === "down",
+			if: gestures.swipeDown && mario.direction.horizontal === "down",
 			then: () => {
 				mario.action = nearTop ? "rising" : "holding";
-				Matter.Body.setPosition(mario.body, shift(position(mario), 0, 1))
+				Matter.Body.setPosition(mario.body, shift(position(mario), 0, 10))
 			}
 		},
 		{
-			if: gestures.hold && mario.direction.horizontal === "left",
+			if: gestures.swipeLeft && mario.direction.horizontal === "left",
 			then: () => {
 				mario.action = nearTop ? "rising" : "holding";
-				Matter.Body.setPosition(mario.body, shift(position(mario), -1, 0))
+				Matter.Body.setPosition(mario.body, shift(position(mario), -10, 0))
 			}
 		},
 		{
-			if: gestures.hold && mario.direction.horizontal === "right",
+			if: gestures.swipeRight && mario.direction.horizontal === "right",
 			then: () => {
 				mario.action = nearTop ? "rising" : "holding";
-				Matter.Body.setPosition(mario.body, shift(position(mario), 1, 0))
+				Matter.Body.setPosition(mario.body, shift(position(mario), 10, 0))
 			}
 		},
 		{

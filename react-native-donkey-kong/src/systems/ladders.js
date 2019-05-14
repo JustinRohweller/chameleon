@@ -62,6 +62,13 @@ export default (entities, { events }) => {
 			}
 		},
 		{
+			if: gestures.hold && !gestures.swipeDown && !gestures.swipeLeft && !gestures.swipeRight && !gestures.swipeUp,
+			then: () => {
+				mario.action = "jumping";
+				// Matter.Body.setPosition(mario.body, shift(position(mario), 10, 0))
+			}
+		},
+		{
 			if: true,
 			then: () => {
 				mario.action = "holding";

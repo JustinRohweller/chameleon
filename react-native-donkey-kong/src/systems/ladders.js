@@ -34,31 +34,43 @@ export default (entities, { events }) => {
 		// Needs to be more of these: ie. 
 		// up && no horizontal, left and no vertical, ect.
 		{
-			if: gestures.swipeUp && mario.direction.horizontal === "up",
+			if: gestures.swipeUp && mario.direction.horizontal === "up"&& !mario.hasSwiped,
 			then: () => {
+				mario.hasSwiped = true;
 				mario.action = "holding";
-				Matter.Body.setPosition(mario.body, shift(position(mario), 0, -10))
+				Matter.Body.setPosition(mario.body, shift(position(mario), 0, -20))
 			}
 		},
 		{
-			if: gestures.swipeDown && mario.direction.horizontal === "down",
+			if: gestures.swipeDown && mario.direction.horizontal === "down"&& !mario.hasSwiped,
 			then: () => {
+				mario.hasSwiped = true;
 				mario.action = "holding";
-				Matter.Body.setPosition(mario.body, shift(position(mario), 0, 10))
+				Matter.Body.setPosition(mario.body, shift(position(mario), 0, 20))
 			}
 		},
 		{
-			if: gestures.swipeLeft && mario.direction.horizontal === "left",
+			if: gestures.swipeLeft && mario.direction.horizontal === "left"&& !mario.hasSwiped,
 			then: () => {
+				mario.hasSwiped = true;
 				mario.action = "holding";
-				Matter.Body.setPosition(mario.body, shift(position(mario), -10, 0))
+				Matter.Body.setPosition(mario.body, shift(position(mario), -20, 0))
 			}
 		},
 		{
-			if: gestures.swipeRight && mario.direction.horizontal === "right",
+			if: gestures.swipeRight && mario.direction.horizontal === "right" 
+			&& !mario.hasSwiped,
 			then: () => {
+				mario.hasSwiped = true;
 				mario.action = "holding";
-				Matter.Body.setPosition(mario.body, shift(position(mario), 10, 0))
+				Matter.Body.setPosition(mario.body, shift(position(mario), 20, 0))
+			}
+		},
+		{
+			if: gestures.end,
+			then: () => {
+				mario.hasSwiped = false;
+				mario.action = "holding";
 			}
 		},
 		{

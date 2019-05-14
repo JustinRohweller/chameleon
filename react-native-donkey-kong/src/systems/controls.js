@@ -17,6 +17,7 @@ export default (entities, { events }) => {
 	let swipeRight = any(events, "type", "swipe-right");
 	let tap = any(events, "type", "tap");
 	let hold = any(events, "type", "hold");
+	let end = any(events, "type", "end")
 
 	mario.controls.gestures = {
 		swipeUp,
@@ -24,7 +25,8 @@ export default (entities, { events }) => {
 		swipeLeft,
 		swipeRight,
 		tap,
-		hold
+		hold,
+		end
 	}
 
 	let modes = [

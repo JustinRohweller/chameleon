@@ -3,9 +3,27 @@ import { any } from "../utils";
 
 // Converts input ot gestures.
 
-const swipe = (touches, dispatch) => {
-  // console.log(touches[0].type);
+const swipe = (touches, events, dispatch) => {
+//   console.log(touches[0].type);
 	let move = touches.find(x => x.type === "move");
+
+
+	// let fingerUp = touches.find(x => x.type === "hold");
+	// let fingerDown = touches.find(x => x.type === "long-press");
+	// let myEnd = touches.find(x => x.type === "end");
+	// let move = touches.find(x => x.type === "move");
+
+	// let myFingerDown = any(touches, "type", ["long-press", "move"]);
+	// let myFingerUp = any(touches, "type", "end");
+	// let myMove =  any(events, "type", "move");
+	// let myHold =  any(events, "type", "hold");
+	
+	// if (move) {
+	// 	if (myEnd) {
+	// 		dispatch({ type: "swipe-left" });
+	// 	}
+
+	// }
 	
 	if (move) {
 		if (move.delta.locationX < -20)
@@ -38,10 +56,18 @@ const tap = (touches, dispatch) => {
 		dispatch({ type: "tap"})
 };
 
+const end = (touches, dispatch) => {
+	let myEnd = touches.find(x => x.type === "end");
+
+	if (myEnd)
+		dispatch({ type: "end"})
+};
+
 export default (entities, { touches, events, dispatch }) => {
-	swipe(touches, dispatch)
+	swipe(touches, events, dispatch)
 	hold(touches, events, dispatch)
 	tap(touches, dispatch)
+	end(touches, dispatch)
 
 	return entities;
 };

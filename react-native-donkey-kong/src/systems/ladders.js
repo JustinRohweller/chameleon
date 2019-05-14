@@ -17,7 +17,6 @@ export default (entities, { events }) => {
 	let goingUp = mario.direction.vertical === "up";
 	let marioBase = base(mario);
 	let canGoDown = true;
-	let nearTop = false;
 
 	Matter.Body.setPosition(mario.body, { x: position(mario).x, y: position(mario).y })
 
@@ -37,28 +36,28 @@ export default (entities, { events }) => {
 		{
 			if: gestures.swipeUp && mario.direction.horizontal === "up",
 			then: () => {
-				mario.action = nearTop ? "rising" : "holding";
+				mario.action = "holding";
 				Matter.Body.setPosition(mario.body, shift(position(mario), 0, -10))
 			}
 		},
 		{
 			if: gestures.swipeDown && mario.direction.horizontal === "down",
 			then: () => {
-				mario.action = nearTop ? "rising" : "holding";
+				mario.action = "holding";
 				Matter.Body.setPosition(mario.body, shift(position(mario), 0, 10))
 			}
 		},
 		{
 			if: gestures.swipeLeft && mario.direction.horizontal === "left",
 			then: () => {
-				mario.action = nearTop ? "rising" : "holding";
+				mario.action = "holding";
 				Matter.Body.setPosition(mario.body, shift(position(mario), -10, 0))
 			}
 		},
 		{
 			if: gestures.swipeRight && mario.direction.horizontal === "right",
 			then: () => {
-				mario.action = nearTop ? "rising" : "holding";
+				mario.action = "holding";
 				Matter.Body.setPosition(mario.body, shift(position(mario), 10, 0))
 			}
 		},

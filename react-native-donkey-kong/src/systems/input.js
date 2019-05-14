@@ -7,16 +7,16 @@ const swipe = (touches, dispatch) => {
 	let move = touches.find(x => x.type === "move");
 	
 	if (move) {
-		if (move.delta.locationX < -2)
+		if (move.delta.locationX < -20)
 			dispatch({ type: "swipe-left" });
 
-		if (move.delta.locationX > 2)
+		if (move.delta.locationX > 20)
 			dispatch({ type: "swipe-right" });
 
-		if (move.delta.locationY < -2)
+		if (move.delta.locationY < -20)
 			dispatch({ type: "swipe-up" });
 
-		if (move.delta.locationY > 2)
+		if (move.delta.locationY > 20)
 			dispatch({ type: "swipe-down" });
 	}
 };

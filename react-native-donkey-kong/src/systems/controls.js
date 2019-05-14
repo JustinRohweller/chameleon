@@ -18,7 +18,6 @@ export default (entities, { events }) => {
 	let tap = any(events, "type", "tap");
 	let hold = any(events, "type", "hold");
 
-
 	mario.controls.gestures = {
 		swipeUp,
 		swipeDown,

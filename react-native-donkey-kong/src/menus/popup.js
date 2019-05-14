@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { ScrollView, View, Dimensions } from "react-native";
+import { ScrollView, View, Dimensions, TouchableOpacity, Text } from "react-native";
 import * as Animatable from "react-native-animatable";
 import EStyleSheet from "react-native-extended-stylesheet";
 

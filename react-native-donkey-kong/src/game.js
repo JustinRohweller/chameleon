@@ -65,6 +65,8 @@ export default class Game extends PureComponent {
     });
   };
 
+
+  // These events can be called via dispatch from other files for these events to occur.
   handleEvent = ev => {
     switch (ev.type) {
       case "game-over":

@@ -30,7 +30,7 @@ export default (entities, { events }) => {
 // hold to hide/use ability
 // double tap to use tongue.
 
-const DISTANCE_PER_SWIPE = 50;
+const DISTANCE_PER_SWIPE = 25;
 // 
 	let actions = [
 		// Needs to be more of these: ie. 
@@ -75,11 +75,18 @@ const DISTANCE_PER_SWIPE = 50;
 				mario.action = "holding";
 			}
 		},
+		// {
+		// 	if: gestures.hold && !gestures.swipeDown && !gestures.swipeLeft && !gestures.swipeRight && !gestures.swipeUp,
+		// 	then: () => {
+		// 		mario.action = "jumping";
+		// 		// Matter.Body.setPosition(mario.body, shift(position(mario), 10, 0))
+		// 	}
+		// },
 		{
-			if: gestures.hold && !gestures.swipeDown && !gestures.swipeLeft && !gestures.swipeRight && !gestures.swipeUp,
+			if: gestures.doubleTap,
 			then: () => {
 				mario.action = "jumping";
-				// Matter.Body.setPosition(mario.body, shift(position(mario), 10, 0))
+				Matter.Body.setPosition(mario.body, shift(position(mario), 10, 0))
 			}
 		},
 		{

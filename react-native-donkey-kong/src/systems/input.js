@@ -4,6 +4,7 @@ import { any } from "../utils";
 // Converts input ot gestures.
 
 const swipe = (touches, dispatch) => {
+  // console.log(touches[0].type);
 	let move = touches.find(x => x.type === "move");
 	
 	if (move) {

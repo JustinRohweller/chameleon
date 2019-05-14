@@ -3,39 +3,22 @@ import { any } from "../utils";
 
 // Converts input ot gestures.
 
+
 const swipe = (touches, events, dispatch) => {
-//   console.log(touches[0].type);
 	let move = touches.find(x => x.type === "move");
-
-
-	// let fingerUp = touches.find(x => x.type === "hold");
-	// let fingerDown = touches.find(x => x.type === "long-press");
-	// let myEnd = touches.find(x => x.type === "end");
-	// let move = touches.find(x => x.type === "move");
-
-	// let myFingerDown = any(touches, "type", ["long-press", "move"]);
-	// let myFingerUp = any(touches, "type", "end");
-	// let myMove =  any(events, "type", "move");
-	// let myHold =  any(events, "type", "hold");
-	
-	// if (move) {
-	// 	if (myEnd) {
-	// 		dispatch({ type: "swipe-left" });
-	// 	}
-
-	// }
+	const ACTIVATE_SWIPE_DISTANCE_THRESHOLD = 10;
 	
 	if (move) {
-		if (move.delta.locationX < -20)
+		if (move.delta.locationX < -ACTIVATE_SWIPE_DISTANCE_THRESHOLD)
 			dispatch({ type: "swipe-left" });
 
-		if (move.delta.locationX > 20)
+		if (move.delta.locationX > ACTIVATE_SWIPE_DISTANCE_THRESHOLD)
 			dispatch({ type: "swipe-right" });
 
-		if (move.delta.locationY < -20)
+		if (move.delta.locationY < -ACTIVATE_SWIPE_DISTANCE_THRESHOLD)
 			dispatch({ type: "swipe-up" });
 
-		if (move.delta.locationY > 20)
+		if (move.delta.locationY > ACTIVATE_SWIPE_DISTANCE_THRESHOLD)
 			dispatch({ type: "swipe-down" });
 	}
 };

@@ -29,6 +29,8 @@ export default (entities, { events }) => {
 // tap baddie to attack?
 // hold to hide/use ability
 // double tap to use tongue.
+
+const DISTANCE_PER_SWIPE = 50;
 // 
 	let actions = [
 		// Needs to be more of these: ie. 
@@ -38,7 +40,7 @@ export default (entities, { events }) => {
 			then: () => {
 				mario.hasSwiped = true;
 				mario.action = "holding";
-				Matter.Body.setPosition(mario.body, shift(position(mario), 0, -20))
+				Matter.Body.setPosition(mario.body, shift(position(mario), 0, -DISTANCE_PER_SWIPE))
 			}
 		},
 		{
@@ -46,7 +48,7 @@ export default (entities, { events }) => {
 			then: () => {
 				mario.hasSwiped = true;
 				mario.action = "holding";
-				Matter.Body.setPosition(mario.body, shift(position(mario), 0, 20))
+				Matter.Body.setPosition(mario.body, shift(position(mario), 0, DISTANCE_PER_SWIPE))
 			}
 		},
 		{
@@ -54,7 +56,7 @@ export default (entities, { events }) => {
 			then: () => {
 				mario.hasSwiped = true;
 				mario.action = "holding";
-				Matter.Body.setPosition(mario.body, shift(position(mario), -20, 0))
+				Matter.Body.setPosition(mario.body, shift(position(mario), -DISTANCE_PER_SWIPE, 0))
 			}
 		},
 		{
@@ -63,7 +65,7 @@ export default (entities, { events }) => {
 			then: () => {
 				mario.hasSwiped = true;
 				mario.action = "holding";
-				Matter.Body.setPosition(mario.body, shift(position(mario), 20, 0))
+				Matter.Body.setPosition(mario.body, shift(position(mario), DISTANCE_PER_SWIPE, 0))
 			}
 		},
 		{

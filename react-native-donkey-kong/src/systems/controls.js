@@ -8,8 +8,6 @@ import {
 	distance
 } from "../utils";
 
-// Connects in game actions to gestures.
-
 export default (entities, { events }) => {
 	let mario = entities.mario;
 
@@ -34,10 +32,6 @@ export default (entities, { events }) => {
 			if: true,
 			then: () => { mario.controls.mode = "ladder"; }
 		},
-		{
-			if: true,
-			then: () => {}
-		}
 	];
 
 	modes.find(x => x.if).then();

@@ -4,6 +4,7 @@ import { any } from "../utils";
 // Converts input ot gestures.
 
 const swipe = (touches, dispatch) => {
+  // console.log(touches[0].type);
 	let move = touches.find(x => x.type === "move");
 	
 	if (move) {
@@ -20,13 +21,6 @@ const swipe = (touches, dispatch) => {
 			dispatch({ type: "swipe-down" });
 	}
 };
-
-// const endHold = (touches, events, dispatch) => {
-// 	let fingerUp = any(touches, "type", "end");
-	
-// 	if (fingerUp)
-// 		dispatch({ type: "endHold" });
-// };
 
 const hold = (touches, events, dispatch) => {
 	let fingerDown = any(touches, "type", ["long-press", "move"]);

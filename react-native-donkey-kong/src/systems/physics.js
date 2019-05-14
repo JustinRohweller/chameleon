@@ -33,17 +33,6 @@ const checkIfMarioHasFallenOff = (entities, dispatch) => {
 
 const updatePlatformCollisionFilters = entities => {
 	let mario = entities.mario;
-	// let platforms = filter(entities, "platform");
-	// let active = filter(platforms, p => aboveTopEdge(p, shift(base(mario), 0, -2)));
-	// let others = filter(platforms, x => active.indexOf(x) === -1);
-
-	// active.forEach(x => {
-	// 	x.body.collisionFilter.mask = collisionCategories.mario | collisionCategories.barrel;
-	// });
-
-	// others.forEach(x => {
-	// 	x.body.collisionFilter.mask = collisionCategories.barrel;
-	// });
 
 	return entities;
 };

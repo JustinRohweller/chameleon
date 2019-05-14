@@ -28,14 +28,14 @@ export default restart => {
     return {
         physics: { engine: engine, world: world },
 
-        ladder1: Ladder(
-            world,
-            { x: cx + platformWidth * 0.125 - 12, y: offsetY + 70 },
-            50,
-            true,
-            false,
-            "left"
-        ),
+        // ladder1: Ladder(
+        //     world,
+        //     { x: cx + platformWidth * 0.125 - 12, y: offsetY + 70 },
+        //     50,
+        //     true,
+        //     false,
+        //     "left"
+        // ),
 
         // Princess is referenced in the camera.js. She is the goal. Replace with goal as name.
         princess: {

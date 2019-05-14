@@ -5,6 +5,7 @@ import Ladders from "./ladders";
 import Physics from "./physics";
 import Animation from "./animation";
 import Camera from "./camera";
+import Goal from './goal';
 
 export default [
 	Input,
@@ -13,5 +14,6 @@ export default [
 	Ladders,
 	Animation,
 	Camera,
-	Physics
+	Physics,
+	Goal
 ];

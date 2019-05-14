@@ -1,5 +1,6 @@
 import Matter from "matter-js";
 import { any } from "../utils";
+// import console = require("console");
 
 // Converts input ot gestures.
 // Touches is array of touch objects.
@@ -8,7 +9,7 @@ import { any } from "../utils";
 
 
 const swipe = (touches, events, dispatch) => {
-	let move = touches.find(x => x.type === "move");
+	// let move = touches.find(x => x.type === "move");
 	const ACTIVATE_SWIPE_DISTANCE_THRESHOLD = 10;
 
 	if (move) {
@@ -27,6 +28,7 @@ const swipe = (touches, events, dispatch) => {
 };
 
 const hold = (touches, events, dispatch) => {
+	console.log(events);
 	let fingerDown = any(touches, "type", ["long-press", "move"]);
 	let fingerUp = any(touches, "type", "end");
 	let hold = any(events, "type", "hold");

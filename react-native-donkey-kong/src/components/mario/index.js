@@ -70,6 +70,7 @@ export default (world, pos) => {
       vertical: "up",
     },
     hasSwiped: false,
+    hasTapped: 0,
     action: "jumping",
     actions: {
       jumping: resolveAssetSource(ChameleonLicking),

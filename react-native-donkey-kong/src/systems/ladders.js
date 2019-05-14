@@ -31,6 +31,7 @@ export default (entities, { events }) => {
 // double tap to use tongue.
 
 const DISTANCE_PER_SWIPE = 25;
+let hasTapped = 0;
 // 
 	let actions = [
 		// Needs to be more of these: ie. 
@@ -75,6 +76,21 @@ const DISTANCE_PER_SWIPE = 25;
 				mario.action = "holding";
 			}
 		},
+		{
+			if: gestures.tap,
+			then: () => {
+				console.log(hasTapped);
+				if (mario.hasTapped === 0) {
+					mario.hasTapped++;
+					setTimeout(() => {
+						mario.hasTapped = 0;
+					}, 5000)
+				} else if (mario.hasTapped === 1) {
+					Matter.Body.setPosition(mario.body, shift(position(mario), DISTANCE_PER_SWIPE, 0))
+				}
+				mario.action = "holding";
+			}
+		},
 		// {
 		// 	if: gestures.hold && !gestures.swipeDown && !gestures.swipeLeft && !gestures.swipeRight && !gestures.swipeUp,
 		// 	then: () => {
@@ -82,13 +98,13 @@ const DISTANCE_PER_SWIPE = 25;
 		// 		// Matter.Body.setPosition(mario.body, shift(position(mario), 10, 0))
 		// 	}
 		// },
-		{
-			if: gestures.doubleTap,
-			then: () => {
-				mario.action = "jumping";
-				Matter.Body.setPosition(mario.body, shift(position(mario), 10, 0))
-			}
-		},
+		// {
+		// 	if: gestures.doubleTap,
+		// 	then: () => {
+		// 		mario.action = "jumping";
+		// 		Matter.Body.setPosition(mario.body, shift(position(mario), 10, 0))
+		// 	}
+		// },
 		{
 			if: true,
 			then: () => {
